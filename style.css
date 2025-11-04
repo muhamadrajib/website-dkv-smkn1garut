@@ -1,0 +1,744 @@
+/*
+======================================================
+  DKV THEME: DARK MODE | CYBERPUNK/GEOMETRIC ACCENTS
+======================================================
+*/
+
+/* --- Pengaturan Global dan Reset --- */
+body {
+    font-family: 'Montserrat', sans-serif; 
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a2e; /* Latar belakang sangat gelap (Dark Mode) */
+    color: #f0f0f0; /* Teks terang */
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* --- Variabel Warna (Biru Laut Neon) --- */
+:root {
+    --primary-color: #00BCD4; /* Biru Laut Terang/Cyan (Aksen Neon) */
+    --secondary-color: #004d60; /* Biru Laut Tua/Dasar */
+    --text-dark: #1a1a2e;
+    --text-light: #ffffff;
+    --card-bg: #2c2c44; /* Warna Card lebih gelap dari background */
+    --shadow-neon: 0 0 10px rgba(0, 188, 212, 0.7), 0 0 20px rgba(0, 188, 212, 0.3);
+    --shadow-card: 5px 5px 15px rgba(0, 0, 0, 0.5), -5px -5px 15px rgba(44, 44, 68, 0.2);
+}
+
+/* --- Header dan Navigasi --- */
+header {
+    background-color: var(--secondary-color); 
+    color: var(--text-light);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8); 
+    position: sticky; 
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8em; 
+    font-weight: 900; 
+    letter-spacing: 2px;
+    color: var(--primary-color);
+    text-shadow: 0 0 5px rgba(0, 188, 212, 0.8);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li a {
+    color: var(--text-light);
+    padding: 10px 18px;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s, text-shadow 0.3s;
+    font-weight: 500;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: var(--primary-color); 
+    color: var(--text-dark);
+    text-shadow: none;
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-neon);
+}
+
+/* --- Banner / Hero Section (Background Gambar) --- */
+.banner-hero {
+    /* Panggil gambar sebagai background */
+    background-image: url('garut-A.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed; 
+    background-color: #1a1a2e; 
+    
+    padding: 120px 20px 100px; 
+    text-align: left;
+    color: var(--text-light);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Pseudo-element ::before sebagai Dark Overlay (lapisan gelap transparan) */
+.banner-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Nilai opacity 0.75 membuat gambar terlihat gelap */
+    background: rgba(0, 0, 0, 0.75); 
+    z-index: 1;
+}
+
+/* Pseudo-element ::after untuk Neon Pattern DKV (garis-garis) */
+.banner-hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Pattern DKV: Garis diagonal neon */
+    background: repeating-linear-gradient(
+        -45deg,
+        rgba(0, 188, 212, 0.1),
+        rgba(0, 188, 212, 0.1) 2px,
+        transparent 2px,
+        transparent 10px
+    );
+    z-index: 2; 
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px; 
+    position: relative;
+    z-index: 3; /* Pastikan Teks dan Foto Guru berada di atas Background */
+}
+/* ... (lanjutan styling hero content) ... */
+/* Info Tags */
+.tag {
+    background: var(--primary-color);
+    color: var(--text-dark);
+    font-weight: 700;
+    border-radius: 3px; /* Kotak tegas */
+    padding: 6px 10px;
+    box-shadow: var(--shadow-neon);
+    text-shadow: none;
+}
+.dosen-tag {
+    background-color: #f39c12; /* Warna Tag Dosen (Orange Neon) */
+    box-shadow: 0 0 10px rgba(243, 156, 18, 0.7), 0 0 20px rgba(243, 156, 18, 0.3);
+    color: var(--text-dark);
+}
+
+/* --- Konten Utama --- */
+.content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.section-title {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 15px;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
+}
+
+.section-subtitle {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+    color: #aaa;
+}
+
+.secondary-bg {
+    background-color: #1f1f33; /* Latar belakang section berbeda */
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--secondary-color);
+}
+
+/* Kartu DKV yang sangat modern */
+.card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow-card); /* Shadow DKV */
+    transition: all 0.4s ease;
+    border: 1px solid rgba(0, 188, 212, 0.3); /* Border halus neon */
+    text-align: center;
+}
+
+.card:hover {
+    transform: scale(1.05); /* Zoom in */
+    box-shadow: 0 0 25px var(--primary-color); /* Glow neon kuat saat hover */
+    background-color: #363653; /* Sedikit terang saat hover */
+}
+
+.icon-big {
+    font-size: 3em;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    text-shadow: var(--shadow-neon);
+}
+
+/* Kartu Profil Pembuat */
+.profile-card {
+    background: var(--secondary-color);
+    color: var(--text-light);
+    border: 1px solid var(--primary-color);
+}
+
+.profile-card:hover {
+    box-shadow: 0 0 30px var(--primary-color);
+}
+
+.profile-img {
+    border: 5px solid var(--primary-color);
+    border-radius: 50%;
+}
+
+.profile-card h3 {
+    color: var(--primary-color);
+    text-shadow: var(--shadow-neon);
+}
+
+.profile-card p, .profile-card .role {
+    color: #ccc;
+}
+
+
+/* Styling Tombol Aksi (Neon Gradient) */
+.button-link, .button-action {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #00ffff 100%); /* Gradien sangat terang */
+    color: var(--text-dark); /* Teks gelap di atas neon */
+    padding: 15px 35px;
+    border-radius: 50px; 
+    font-weight: 700;
+    font-size: 1.1em;
+    display: inline-block;
+    transition: all 0.3s;
+    box-shadow: 0 0 10px rgba(0, 188, 212, 0.8);
+    letter-spacing: 1px;
+    border: none;
+}
+
+.button-link:hover, .button
+
+/* --- Tambahan Styling untuk Halaman Profil Sekolah (profil.html) --- */
+
+.profile-detail {
+    padding: 50px;
+}
+
+.profile-card-section {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    /* Garis pemisah neon putus-putus */
+    border-bottom: 1px dashed rgba(0, 188, 212, 0.3);
+}
+
+.profile-card-section h3 {
+    font-size: 1.8em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    /* Efek neon halus pada subjudul */
+    text-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
+}
+
+.profile-card-section p, .clean-list li {
+    color: #ccc; /* Teks abu-abu terang */
+}
+
+/* Styling Kepala Sekolah */
+.headmaster {
+    border-left: 5px solid var(--primary-color);
+    padding-left: 20px;
+}
+.headmaster .headmaster-name {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #fff;
+    padding: 10px 0;
+}
+
+/* Visi Misi Grid */
+.vision-mission-grid .card {
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.vision-mission-grid .card h3 {
+    color: var(--primary-color);
+    text-align: left;
+}
+
+/* List Styling (Misi, Kontak, Partner) */
+.clean-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.clean-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: color 0.3s;
+}
+.clean-list li:hover {
+    color: var(--primary-color);
+}
+
+/* Kompetensi Keahlian Tags */
+.competence-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+.competence-tag {
+    background-color: var(--card-bg);
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-left: 3px solid #ccc;
+}
+.competence-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-neon);
+}
+.competence-tag i {
+    color: var(--primary-color);
+    margin-right: 8px;
+}
+.competence-tag.active-comp {
+    background-color: var(--primary-color); /* DKV menggunakan warna neon utama */
+    color: var(--text-dark);
+    font-weight: 800;
+    box-shadow: var(--shadow-neon);
+    border-left-color: var(--text-dark);
+}
+.active-comp i {
+    color: var(--text-dark);
+}
+
+/* Facility Items */
+.facility-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+.facility-item {
+    background-color: #363653;
+    padding: 15px;
+    border-radius: 8px;
+    color: #fff;
+    transition: all 0.3s;
+    border-left: 3px solid var(--primary-color);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.facility-item:hover {
+    border-left-color: #f39c12; /* Warna kuning neon saat hover */
+    transform: scale(1.02);
+}
+.facility-item i {
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+
+/* Partnership and Moto */
+.partner-list li {
+    padding: 5px 0;
+    border-bottom: none;
+}
+.moto-text {
+    color: #f39c12; /* Warna kuning neon untuk Moto */
+    margin-top: 20px;
+    font-weight: 700;
+    font-size: 1.2em;
+}
+.moto-quote {
+    font-style: italic;
+    font-size: 1.3em;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+/* Contact Info */
+.contact-list a {
+    color: var(--primary-color);
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+.contact-list a:hover {
+    color: #f39c12;
+}
+
+/* --- Styling untuk Featured Image (garut-A.jpg) --- */
+
+.featured-image-section {
+    max-width: 1200px;
+    margin: 40px auto; /* Jarak atas dan bawah */
+    padding: 0 20px;
+}
+
+.image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5); /* Shadow kuat */
+    border: 3px solid var(--primary-color); /* Border neon */
+    transition: transform 0.3s;
+}
+
+.image-wrapper:hover {
+    transform: scale(1.01);
+}
+
+.featured-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    filter: brightness(0.85); /* Sedikit redup agar teks lebih jelas */
+}
+
+.image-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Latar belakang gelap transparan */
+    padding: 15px;
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 1.1em;
+    font-weight: 700;
+    text-shadow: var(--shadow-neon);
+}
+
+/* --- Styling Tambahan untuk 6 Kartu Profil Pembuat --- */
+
+.grid-layout.profil-pembuat.six-cards {
+    /* Mengatur 3 kolom yang sama rata di desktop */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px; /* Jarak antar kartu */
+}
+
+/* Penyesuaian Responsif untuk 6 kartu */
+@media (max-width: 1200px) {
+    .grid-layout.profil-pembuat.six-cards {
+        grid-template-columns: repeat(2, 1fr); /* Menjadi 2 kolom di layar yang lebih kecil */
+    }
+}
+@media (max-width: 600px) {
+    .grid-layout.profil-pembuat.six-cards {
+        grid-template-columns: 1fr; /* Menjadi 1 kolom di HP */
+    }
+}
+
+/* --- Styling Logo di Halaman Profil Sekolah --- */
+
+.logo-title-container {
+    display: flex; 
+    align-items: center; 
+    gap: 30px; /* Jarak antara logo dan teks judul diperluas */
+    font-size: 2.5em; /* Ukuran teks judul diperbesar sedikit agar seimbang */
+    margin-top: 30px; 
+    margin-bottom: 40px; 
+}
+
+.profile-logo {
+    width: 200px; /* PERBESAR HINGGA 200px (SANGAT BESAR) */
+    height: auto; 
+    object-fit: contain;
+    /* Efek neon shadow tetap dipertahankan */
+    filter: drop-shadow(0 0 12px rgba(0, 188, 212, 0.9)); /* Neon shadow sedikit lebih kuat lagi */
+}
+
+
+/* Penyesuaian Responsif untuk HP */
+@media (max-width: 768px) {
+    .logo-title-container {
+        flex-direction: column; 
+        text-align: center;
+        font-size: 2em; /* Ukuran teks judul di HP */
+        gap: 15px;
+    }
+    .profile-logo {
+        width: 120px; /* Diperbesar menjadi 120px di HP */
+        height: auto;
+    }
+}
+/* --- Tambahan Styling Jurusan di Profil Sekolah --- */
+
+.program-keahlian-grid {
+    display: grid;
+    /* Atur 3 kolom di desktop */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; /* Jarak antar kartu */
+    margin-top: 20px;
+}
+
+.jurusan-card {
+    background-color: var(--secondary-color-dark); 
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-left: 4px solid var(--primary-color);
+}
+
+.jurusan-card h3 {
+    color: var(--primary-color);
+    font-size: 1.2em;
+    margin-top: 10px;
+    margin-bottom: 8px;
+    text-shadow: var(--shadow-neon-small);
+}
+
+.jurusan-card i {
+    color: var(--primary-color);
+    font-size: 1.8em;
+    margin-bottom: 5px;
+}
+
+.jurusan-card p {
+    color: #ccc;
+    font-size: 0.95em;
+}
+
+.jurusan-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+    border-left-color: #f39c12; /* Efek hover oranye neon */
+}
+
+/* Penandaan khusus untuk Jurusan DKV */
+.jurusan-card.active-dkv {
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.8);
+    background-color: #1a1a2e;
+}
+
+/* Responsif untuk Jurusan */
+@media (max-width: 768px) {
+    .program-keahlian-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+        gap: 20px;
+    }
+}
+/* --- Styling Khusus Halaman Materi & Kuis (materi.html) --- */
+
+/* Hero Materi (Berbeda dari Hero Utama) */
+.materi-hero {
+    background: #0d0d1a; /* Warna solid gelap */
+    padding: 100px 20px 80px;
+    text-align: center;
+}
+.materi-hero .hero-content {
+    flex-direction: column;
+}
+.materi-hero h1 {
+    font-size: 3em;
+    text-shadow: 0 0 15px var(--primary-color-neon);
+}
+
+/* Grid Materi (3 Kolom) */
+.materi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.materi-card {
+    background-color: var(--secondary-color-dark);
+    padding: 25px;
+    border-radius: 10px;
+    border-top: 5px solid var(--primary-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    text-align: left;
+}
+.materi-card h3 {
+    color: var(--text-light);
+    font-size: 1.4em;
+    margin-top: 10px;
+    text-shadow: var(--shadow-neon-small);
+}
+.materi-card p {
+    color: #aaa;
+    margin: 10px 0 20px;
+    font-size: 0.95em;
+}
+
+/* Tag Kelas */
+.materi-tag.class-tag {
+    position: absolute;
+    top: -15px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: var(--bg-dark);
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-weight: 700;
+    box-shadow: 0 0 10px rgba(0, 188, 212, 0.7);
+    font-size: 0.85em;
+}
+
+/* Metadata Materi (Jam Pelajaran, Format) */
+.materi-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed #333;
+    font-size: 0.9em;
+    color: #777;
+}
+.materi-meta .meta-item i {
+    color: var(--primary-color);
+    margin-right: 5px;
+}
+
+/* Kuis Section */
+.kuis-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+}
+.kuis-card {
+    background-color: var(--secondary-color-dark);
+    border: 1px solid rgba(0, 188, 212, 0.3);
+    padding: 30px;
+}
+.kuis-card h3 {
+    color: var(--primary-color);
+}
+.kuis-card .icon-big {
+    font-size: 3em;
+    color: #f39c12; /* Warna oranye/emas untuk kuis */
+    margin-bottom: 20px;
+}
+
+/* Responsif untuk Materi */
+@media (max-width: 768px) {
+    .materi-grid {
+        grid-template-columns: 1fr;
+    }
+    .kuis-grid {
+        flex-direction: column;
+    }
+}
+/* --- Styling Khusus Halaman Kontak (kontak.html) --- */
+
+.contact-grid {
+    display: grid;
+    /* 3 Kolom untuk kontak utama */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.contact-card {
+    text-align: center;
+    border-radius: 12px;
+    background-color: var(--secondary-color-dark);
+    padding: 30px 20px;
+    border: 1px solid rgba(0, 188, 212, 0.2);
+    transition: all 0.3s;
+}
+
+.contact-card .icon-big {
+    font-size: 3.5em;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    text-shadow: var(--shadow-neon-medium);
+}
+
+.contact-card h3 {
+    color: var(--text-light);
+    margin-bottom: 10px;
+}
+
+.contact-card .contact-info {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #fff;
+    margin-top: 10px;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.contact-card .small-button {
+    margin-top: 15px;
+    display: inline-block;
+    padding: 8px 15px;
+}
+
+/* Social Media Section */
+.social-contact-section {
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 2px dashed rgba(0, 188, 212, 0.3);
+}
+
+.social-contact-section h3 {
+    color: var(--text-light);
+    margin-bottom: 30px;
+}
+
+.social-contact-section .social-links a {
+    font-size: 3em; /* Ikon sosial media besar */
+    margin: 0 15px;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+.social-contact-section .social-links a:hover {
+    color: #f39c12; /* Warna neon oranye saat hover */
+    text-shadow: 0 0 10px #f39c12;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
