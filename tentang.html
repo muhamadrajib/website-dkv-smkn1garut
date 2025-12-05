@@ -3,10 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil Pembuat - Web Pembelajaran DKV</title>
+    <title>Profil Pembuat - DKV SMKN 1 GARUT</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        /* CSS Khusus untuk Profil Pembuat */
+        .profil-grid {
+            /* Mengatur 3 kolom untuk desktop, 1 atau 2 untuk mobile */
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .profil-card {
+            background-color: var(--background-dark);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .profil-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .profil-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%; /* Membuat gambar menjadi bulat */
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 5px solid var(--primary-color);
+        }
+
+        .profil-card h3 {
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        .profil-card p {
+            font-size: 0.9em;
+            color: var(--text-color-light);
+            margin: 5px 0;
+        }
+        .profil-card .role {
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            display: block;
+        }
+    </style>
 </head>
 <body class="dkv-theme">
 
@@ -21,72 +70,72 @@
                     <li><a href="profil.html">Profil Sekolah</a></li>
                     <li><a href="materi.html">Materi & Kuis</a></li>
                     <li><a href="absensi.html">Absensi</a></li> 
-                    <li><a href="video.html">Video Pembelajaran</a></li> <li><a href="tentang.html">Profil Pembuat</a></li>
+                    <li><a href="video.html">Video Pembelajaran</a></li>
+                    <li><a href="jadwal.html">Jadwal Pelajaran</a></li>
+                    <li><a href="tentang.html" class="active">Profil Pembuat</a></li>
                     <li><a href="kontak.html">Kontak</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
+    <section class="banner-hero">
+        <div class="hero-content" style="text-align: center;">
+            <div class="hero-text">
+                <h1>PROFIL TIM PENGEMBANG 👨‍💻👩‍💻</h1>
+                <p class="subtitle">Tim Mahasiswa Sistem Informasi IPI yang mengembangkan *website* pembelajaran ini.</p>
+            </div>
+        </div>
+    </section>
+
     <main class="content-wrapper">
-        <section class="content-section secondary-bg creator-profile">
-            <h2 class="section-title"><i class="fas fa-users-gear"></i> Tim Pengembang Website</h2>
+
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-users"></i> Anggota Tim Pengembangan</h2>
+            <p class="section-subtitle">Berikut adalah daftar lengkap anggota tim pengembang dari mahasiswa Sistem Informasi IPI:</p>
             
-            <p class="section-subtitle" style="text-align: left; margin-top: -20px; color: #aaa;">Website ini dikembangkan sebagai tugas mata kuliah Konsep Sistem Informasi oleh mahasiswa/i Sistem Informasi IPI.</p>
+            <div class="profil-grid">
+                
+                <div class="card profil-card hover-3d">
+                    <img src="IMG-20251203-WA0003[1].jpg" alt="Foto Profil Triana" class="profil-img">
+                    <h3>Triana Puspita Dewi</h3>
+                    <p>NIM: 2557201073022</p>
+                </div>
 
-            <div class="grid-layout profil-pembuat six-cards">
-
-                <div class="card profile-card glow-on-hover detailed-card">
-                    <img src="marsarina.jpg" alt="Foto Marsarina Punika Widiyanti" class="profile-img">
+                <div class="card profil-card hover-3d">
+                    <img src="InShot_20251203_220015639.jpg" alt="Foto Profil Marsarina" class="profil-img">
                     <h3>Marsarina Punika Widiyanti</h3>
-                    <p class="nim">NIM: 25572014011</p>
-                    <p class="role-long"><i class="fas fa-star"></i> Koordinator Tim</p>
-                </div>
-                
-                <div class="card profile-card glow-on-hover detailed-card">
-                    <img src="aifina.jpg" alt="Foto Ai Fina Melawati" class="profile-img">
-                    <h3>Ai Fina Melawati</h3>
-                    <p class="nim">NIM: 25572014008</p>
-                    <p class="role-long"><i class="fas fa-search"></i> Pengumpul Data</p>
+                    <p>NIM: 25572014011</p>
                 </div>
 
-                <div class="card profile-card glow-on-hover detailed-card">
-                    <img src="ajmil.jpg" alt="Foto Ajmil maulana firdaus" class="profile-img">
-                    <h3>Ajmil maulana firdaus</h3>
-                    <p class="nim">NIM: 2557201073021</p>
-                    <p class="role-long"><i class="fas fa-code-branch"></i> Analis Sistem</p>
-                </div>
-                
-                <div class="card profile-card glow-on-hover detailed-card">
-                    <img src="triana.jpg" alt="Foto Triana puspita dewi" class="profile-img">
-                    <h3>Triana puspita dewi</h3>
-                    <p class="nim">NIM: 2557201073022</p>
-                    <p class="role-long"><i class="fas fa-file-alt"></i> Dokumentasi & Pelaporan</p>
-                </div>
-
-                <div class="card profile-card glow-on-hover detailed-card">
-                    <img src="erin.jpg" alt="Foto Erin Dwi Susanti" class="profile-img">
-                    <h3>Erin Dwi Susanti</h3>
-                    <p class="nim">NIM: 25572014002</p>
-                    <p class="role-long"><i class="fas fa-paint-brush"></i> Desain Konten</p>
-                </div>
-
-                <div class="card profile-card glow-on-hover detailed-card">
-                    <img src="rajib.jpg" alt="Foto Muhamad Rajib Al Azhari" class="profile-img">
+                <div class="card profil-card hover-3d">
+                    <img src="Gambar WhatsApp 2025-12-03 pukul 22.18.02_c1b53bf2.jpg" alt="Foto Profil Rajib" class="profil-img">
                     <h3>Muhamad Rajib Al Azhari</h3>
-                    <p class="nim">NIM: 25572014009</p>
-                    <p class="role-long"><i class="fas fa-laptop-code"></i> Pengembang UI/UX</p>
+                    <p>NIM: 25572014009</p>
+                </div>
+                
+                <div class="card profil-card hover-3d">
+                    <img src="Gambar WhatsApp 2025-11-03 pukul 14.34.12_717a9b0b.jpg" alt="Foto Profil Ajmil" class="profil-img">
+                    <h3>Ajmil Maulana Firdaus</h3>
+                    <p>NIM: 2557201073021</p>
+                </div>
+                
+                <div class="card profil-card hover-3d">
+                    <img src="Gambar WhatsApp 2025-12-03 pukul 21.55.37_b145c99e.jpg" alt="Foto Profil Erin" class="profil-img">
+                    <h3>Erin Dwi Susanti</h3>
+                    <p>NIM: 25572014002</p>
+                </div>
+                
+                <div class="card profil-card hover-3d">
+                    <img src="Gambar WhatsApp 2025-12-05 pukul 10.19.49_8e654d7c.jpg" alt="Foto Profil Ai Fina" class="profil-img"> 
+                    <h3>Ai Fina Melawati</h3>
+                    <p>NIM: 25572014008</p>
                 </div>
 
             </div>
-            
-            <div class="acknowledgement" style="margin-top: 50px; text-align: center; border-top: 2px solid rgba(0, 188, 212, 0.3); padding-top: 30px;">
-                <h4 style="color: #ccc;"><i class="fas fa-handshake"></i> Terima Kasih Kepada:</h4>
-                <p style="color: #aaa; font-style: italic;">Dr. Drs. R. Suyato Kusumaryono, M.Si. (Dosen Pengampu Mata Kuliah Teknologi Pendidikan)</p>
-            </div>
-
         </section>
-    </main>
+
+    </main> 
 
     <footer>
         <div class="footer-container">
